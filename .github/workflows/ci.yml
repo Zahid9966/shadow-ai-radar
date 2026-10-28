@@ -1,0 +1,45 @@
+name: tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+# Least privilege: this workflow only reads the repository. It uses no secrets.
+permissions:
+  contents: read
+
+# A newer push to the same branch/PR cancels the older run.
+concurrency:
+  group: tests-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    name: Python ${{ matrix.python }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false # a failure on one Python version must not hide the others
+      matrix:
+        python: ["3.10", "3.12", "3.14"] # the minimum the project claims, one in the middle, and the newest
+
+    steps:
+      # Actions are pinned to exact commits (the comment shows the release) so a moved tag cannot change what runs.
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: ${{ matrix.python }}
+
+      - name: Syntax check (warnings count as errors)
+        run: python -W error -m compileall -q radar tests tools bench
+
+      - name: Run tests
+        run: python -W ignore -m unittest discover tests
+
+      - name: Rebuild the Word summary (verified against its Markdown source)
+        run: python tools/build_docs.py --formats docx --out-dir "$RUNNER_TEMP/docs"
