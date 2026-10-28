@@ -1,0 +1,32 @@
+# Generated output and runtime data (databases, reports, evidence, anchors, exports)
+out/
+*.db
+*.db-wal
+*.db-shm
+*.sqlite*
+
+# Secrets and anything encrypted or credential-like: never commit these
+*.env
+!radar.env.example
+*.enc
+*.pem
+*.key
+audit_anchors.txt
+dsr_*.json
+notifications.log
+labels.jsonl
+model.json
+evidence/
+
+# Python
+__pycache__/
+*.pyc
+*.egg-info/
+build/
+dist/
+.venv/
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store

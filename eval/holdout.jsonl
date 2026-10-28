@@ -1,0 +1,32 @@
+{"text": "what is the capital of australia and why was it chosen", "label": "public"}
+{"text": "help me write a cover letter for a marketing job", "label": "public"}
+{"text": "how do i convert celsius to fahrenheit", "label": "public"}
+{"text": "suggest a name for my dog", "label": "public"}
+{"text": "explain how vaccines work in simple terms", "label": "public"}
+{"text": "draft a thank you note to a friend", "label": "public"}
+{"text": "what are good stretching exercises for back pain", "label": "public"}
+{"text": "compare python and javascript for beginners", "label": "public"}
+{"text": "clean up the wording of our team lunch reminder message", "label": "internal"}
+{"text": "create a slide outline for the helix project kickoff", "label": "internal"}
+{"text": "summarize the notes from yesterday's sprint planning", "label": "internal"}
+{"text": "write a friendly welcome message for the new intern cohort", "label": "internal"}
+{"text": "make our office hours announcement shorter", "label": "internal"}
+{"text": "list action items from the orion retrospective", "label": "internal"}
+{"text": "reword the holiday schedule memo for the staff", "label": "internal"}
+{"text": "prepare questions for the atlas project status meeting", "label": "internal"}
+{"text": "our unreleased product pricing strategy for next year needs a critique", "label": "confidential"}
+{"text": "evaluate the acquisition target financials and valuation we received under nda", "label": "confidential"}
+{"text": "help me phrase the termination package for the employee in the restructuring", "label": "confidential"}
+{"text": "summarize the confidential audit findings about revenue recognition", "label": "confidential"}
+{"text": "compare the exclusive reseller agreement terms with globex and suggest concessions", "label": "confidential"}
+{"text": "review our board's draft plan for the upcoming layoffs", "label": "confidential"}
+{"text": "analyze customer churn and contract values for our top ten accounts", "label": "confidential"}
+{"text": "critique the draft settlement offer in the pending lawsuit", "label": "confidential"}
+{"text": "this python function throws a keyerror def load_config(path): return json.load(open(path))", "label": "source_code"}
+{"text": "explain why this regex import re pattern re.compile fails", "label": "source_code"}
+{"text": "help me debug a null pointer in this java method public void save(User u)", "label": "source_code"}
+{"text": "rewrite this bash script for i in $(ls) do echo $i done", "label": "source_code"}
+{"text": "my sql join on orders and customers is slow SELECT o.id FROM orders o", "label": "source_code"}
+{"text": "convert this javascript function const add = (a, b) => a + b to typescript", "label": "source_code"}
+{"text": "fix the failing unit test assert response.status_code == 200", "label": "source_code"}
+{"text": "what is wrong with this docker compose yaml services image ports", "label": "source_code"}

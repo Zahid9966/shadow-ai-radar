@@ -1,0 +1,40 @@
+{"text": "recommend some podcasts about history", "label": "public"}
+{"text": "what causes the northern lights", "label": "public"}
+{"text": "write a haiku about autumn", "label": "public"}
+{"text": "how do i make sourdough starter", "label": "public"}
+{"text": "give me tips for a job interview next week", "label": "public"}
+{"text": "explain what inflation means", "label": "public"}
+{"text": "plan a three day trip to lisbon", "label": "public"}
+{"text": "what's a good beginner workout routine", "label": "public"}
+{"text": "translate good morning into french and german", "label": "public"}
+{"text": "describe the plot of hamlet briefly", "label": "public"}
+{"text": "tidy up this email to the team about moving desks", "label": "internal"}
+{"text": "outline an agenda for the quarterly all hands", "label": "internal"}
+{"text": "rewrite the vacation policy reminder in a warmer tone", "label": "internal"}
+{"text": "turn the standup notes into a short summary for the helix team", "label": "internal"}
+{"text": "draft a note thanking the volunteers who ran the offsite", "label": "internal"}
+{"text": "make a checklist for the new hire laptop setup", "label": "internal"}
+{"text": "shorten the weekly newsletter intro for staff", "label": "internal"}
+{"text": "suggest icebreakers for the nimbus team meeting", "label": "internal"}
+{"text": "format the minutes from monday's project sync", "label": "internal"}
+{"text": "write reminders for the training deadline", "label": "internal"}
+{"text": "we are preparing to acquire a competitor, assess the price range in this nda document", "label": "confidential"}
+{"text": "rank employees by performance rating and suggest who to lay off", "label": "confidential"}
+{"text": "summarize this privileged legal memo about our patent dispute", "label": "confidential"}
+{"text": "what should we offer in the confidential merger negotiation", "label": "confidential"}
+{"text": "analyze our unannounced quarterly revenue before the earnings call", "label": "confidential"}
+{"text": "draft talking points about the executive compensation package", "label": "confidential"}
+{"text": "review the salary data of the whole sales team", "label": "confidential"}
+{"text": "identify weak clauses in the signed customer contract for acme corp", "label": "confidential"}
+{"text": "assess the risks from the internal security breach investigation report", "label": "confidential"}
+{"text": "forecast our unreleased product margins using the board financial model", "label": "confidential"}
+{"text": "why does this loop never terminate while (i < 10) { total += i; }", "label": "source_code"}
+{"text": "help me fix this typescript error const x: number = getValue();", "label": "source_code"}
+{"text": "optimize this postgres query SELECT * FROM events WHERE user_id = 5", "label": "source_code"}
+{"text": "write a pytest for def parse(line): return line.split(',')", "label": "source_code"}
+{"text": "this c function leaks memory void run() { char *p = malloc(10); }", "label": "source_code"}
+{"text": "convert this for loop to a list comprehension for x in items: out.append(x)", "label": "source_code"}
+{"text": "review my go handler func main() { http.ListenAndServe(addr, nil) }", "label": "source_code"}
+{"text": "explain this kubernetes yaml apiVersion: apps/v1 kind: Deployment", "label": "source_code"}
+{"text": "this git command fails: git push origin main --force", "label": "source_code"}
+{"text": "why is my react component re-rendering const [a, setA] = useState(0);", "label": "source_code"}

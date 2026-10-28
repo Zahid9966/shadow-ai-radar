@@ -1,0 +1,56 @@
+{
+  "catalog": {
+    "ai-gateway.corp.example.com": [
+      "Corp AI Gateway",
+      "sanctioned"
+    ],
+    "copilot.microsoft.com": [
+      "M365 Copilot",
+      "sanctioned"
+    ],
+    "chatgpt.com": [
+      "ChatGPT (consumer)",
+      "unsanctioned"
+    ],
+    "claude.ai": [
+      "Claude (consumer)",
+      "unsanctioned"
+    ],
+    "gemini.google.com": [
+      "Gemini (consumer)",
+      "unsanctioned"
+    ],
+    "perplexity.ai": [
+      "Perplexity",
+      "unsanctioned"
+    ],
+    "poe.com": [
+      "Poe",
+      "unsanctioned"
+    ],
+    "deepseek.com": [
+      "DeepSeek",
+      "unsanctioned"
+    ],
+    "character.ai": [
+      "Character.AI",
+      "unsanctioned"
+    ]
+  },
+  "status_weight": {
+    "sanctioned": 0.1,
+    "unsanctioned": 0.8,
+    "suspected": 0.9
+  },
+  "thresholds": {
+    "adoption_users": 5,
+    "volume_floor_bytes": 1000000,
+    "volume_z": 3.5,
+    "retention_days": 90,
+    "offhours_start": 21,
+    "offhours_end": 6,
+    "offhours_min_events": 3,
+    "history_min_events": 20,
+    "offhours_rare_share": 0.02
+  }
+}
