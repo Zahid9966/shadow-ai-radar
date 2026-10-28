@@ -17,7 +17,7 @@ Shadow-AI Radar reads egress-proxy logs and answers: **who uses which AI tools, 
 python3 -m radar run --rebuild        # demo: generate, ingest, detect, report
 python3 -m radar serve --allow-open    # demo only; real use needs RADAR_USERS (serve refuses otherwise)
 python3 -m radar alerts --status open # list; `ack <id> resolved --note ...` to close
-python3 -m radar triage <id>          # summary + next steps (Claude if ANTHROPIC_API_KEY set, else offline)
+python3 -m radar triage <id>          # summary + next steps (offline by default; optional AI summary: see docs/PRIVACY.md)
 python3 -m radar export               # out/blocklist.txt (proxy) + out/siem_alerts.jsonl
 python3 -m radar watch --interval 30  # continuous ingest+detect
 python3 -m radar --policy config/policy.json run   # tune catalog/thresholds without code changes
