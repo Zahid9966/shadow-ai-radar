@@ -16,7 +16,7 @@ A detector nobody can triage or tune is a toy. This phase makes it something a t
 | 2.3 | **Enforcement export**: proxy blocklist + SIEM JSONL | Detection is only valuable if it feeds blocking and the SIEM | files generated; blocklist excludes sanctioned tools |
 | 2.4 | **Live dashboard** (`radar serve`): localhost-only, triage buttons, `/api/alerts` | Day-to-day working surface | ack from the browser persists; rejects foreign Host/Origin |
 | 2.5 | **Watch mode** (`radar watch`) | Near-real-time instead of manual runs | picks up appended log lines each cycle |
-| 2.6 | **AI triage summaries** (`radar triage ID`): Claude if `ANTHROPIC_API_KEY` set, deterministic fallback otherwise; only redacted evidence is sent | Cuts analyst time per alert | works offline; never sends raw secrets |
+| 2.6 | **AI triage summaries** (`radar triage ID`): optional AI summary if an API key is configured, deterministic offline fallback otherwise; only redacted evidence is sent | Cuts analyst time per alert | works offline; never sends raw secrets |
 | 2.7 | **Per-user risk profile** | Targeted coaching rather than blanket blocking | top-risk users table in report |
 
 Exit criteria: all tests green, a full demo walk-through (run → triage → export) works from the CLI.

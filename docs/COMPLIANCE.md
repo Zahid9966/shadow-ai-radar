@@ -33,7 +33,7 @@ Run `radar doctor` for live posture and `radar evidence` for a dated evidence fo
 | **Disk encryption** on the host | Live DB is not encrypted by the tool | IT |
 | **TLS + SSO** if ever exposed beyond localhost | Plain-HTTP tokens | IT/Security |
 | **Independent penetration test** | Required by most SOC 2/ISO audit programmes | Security |
-| **Vendor DPA** for optional Claude triage (`ANTHROPIC_API_KEY`) | Redacted evidence leaves the machine; third-country transfer | Legal |
+| **Vendor DPA** for the optional AI triage summary (needs an API key; see `radar/triage.py`) | Redacted evidence leaves the machine; third-country transfer | Legal |
 | **Access reviews, change management, training, BCP** | SOC 2/ISO are process audits, not just tooling | Org |
 | **Retention in alerts** | Alerts keep a pseudonymous security record after erasure; confirm it is justified | DPO |
 | Re-identification risk | Pseudonymized ≠ anonymous; dept + timing can identify people | DPO |
@@ -46,7 +46,7 @@ Run `radar doctor` for live posture and `radar evidence` for a dated evidence fo
 | Data subjects | Employees and contractors using the corporate network |
 | Data categories | Pseudonymous user ID, department, manager, destination host, timestamps, byte counts, redacted prompt snippets (≤160 chars) |
 | Recipients | Security team (analyst role), GRC (viewer role); optional AI-triage provider (redacted evidence only) |
-| Transfers | None by default; see Claude triage row above |
+| Transfers | None by default; see the optional AI triage row above |
 | Retention | `retention_days` (default 90) for events; alerts per policy _[set]_ |
 | Security measures | See §1 |
 

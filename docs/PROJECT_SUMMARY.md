@@ -6,7 +6,7 @@
 ---
 
 ## 1. The problem
-Employees paste source code, customer data and credentials into consumer AI tools (ChatGPT, Claude, Gemini and others) that the company never vetted. Most security teams cannot see it. Shadow-AI Radar reads egress-proxy logs and answers four questions: **who uses which AI tools, which of those are unapproved, what sensitive data went into them, and what should the security team do next?**
+Employees paste source code, customer data and credentials into consumer AI tools (ChatGPT, Gemini and others) that the company never vetted. Most security teams cannot see it. Shadow-AI Radar reads egress-proxy logs and answers four questions: **who uses which AI tools, which of those are unapproved, what sensitive data went into them, and what should the security team do next?**
 
 Intended users: a security / GRC team at a company, working alongside an HR, Legal and privacy function.
 
@@ -26,7 +26,7 @@ Alerts: **SECRET_LEAK** (keys, tokens, passwords, private keys), **PII_LEAK** (S
 | Discipline | What was built |
 |---|---|
 | **Data engineering** | Bronze → silver → gold pipeline on SQLite; process-pool parallelism; byte-offset checkpoints so re-runs read only new data; one transaction per 5,000-line chunk; data-quality rejects (malformed, duplicate, bad timestamps); retention; log adapters |
-| **AI engineering** | Prompt-sensitivity classifier (public / internal / confidential / source code) with labelling → training → evaluation loop (active learning, held-out sets, per-class precision/recall); optional Claude triage summaries with an offline fallback; classifier down-weighted until trained on real data |
+| **AI engineering** | Prompt-sensitivity classifier (public / internal / confidential / source code) with labelling → training → evaluation loop (active learning, held-out sets, per-class precision/recall); optional AI triage summaries with an offline fallback; classifier down-weighted until trained on real data |
 | **Data analysis** | Robust median/MAD volume anomalies vs. department peers; per-user baselines for off-hours; adoption tracking; risk scoring (tool policy × data sensitivity); week-over-week trend normalised per active day |
 | **Cybersecurity** | Secret/PII detection (patterns, Luhn, entropy, context rules); redact-before-store; ReDoS-hardened parsing; tamper-evident audit log; authenticated dashboard; encrypted backups; threat model |
 

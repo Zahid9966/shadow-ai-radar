@@ -19,7 +19,7 @@ Complete and get sign-off from Legal/DPO, HR and (where applicable) the works co
 ## 3. Controls implemented
 - Redact-before-store (secrets, SSN, cards); verified by test.
 - Dashboard bound to 127.0.0.1, Host/Origin checks, named analyst/viewer users, lockout, and a tamper-evident audit log of who viewed or changed what (see `docs/SECURITY.md`).
-- AI triage sends **only redacted evidence**, only when `ANTHROPIC_API_KEY` is set (opt-in). Review the vendor DPA first.
+- AI triage sends **only redacted evidence**, and only when an AI-provider API key is configured (opt-in; see `radar/triage.py`). Review the vendor DPA first.
 - Retention purge command; policy thresholds in version-controlled config.
 
 ## 4. Controls to add before wider rollout
