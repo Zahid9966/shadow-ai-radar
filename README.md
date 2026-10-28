@@ -1,5 +1,7 @@
 # Shadow-AI Radar
 
+[![tests](https://github.com/Zahid9966/shadow-ai-radar/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/Zahid9966/shadow-ai-radar/actions/workflows/ci.yml)
+
 Employees paste code, customer data and credentials into consumer AI tools the company never vetted.
 Shadow-AI Radar reads egress-proxy logs and answers: **who uses which AI tools, how risky is it, and what leaked?**
 
