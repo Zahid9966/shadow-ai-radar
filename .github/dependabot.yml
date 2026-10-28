@@ -1,0 +1,16 @@
+version: 2
+
+updates:
+  # Keeps the GitHub Actions used by .github/workflows/ci.yml up to date. The actions are pinned to exact commit SHAs
+  # (with a "# vX.Y.Z" comment); Dependabot updates both the SHA and the comment and opens a pull request, which runs the tests.
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+    open-pull-requests-limit: 5
+    commit-message:
+      prefix: "ci"
+    groups:
+      github-actions: # one weekly pull request for all action updates instead of one per action
+        patterns: ["*"]
