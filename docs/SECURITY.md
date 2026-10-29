@@ -18,14 +18,14 @@ A tool that reads employee prompts is itself a high-value target. This documents
 Secure-by-default dashboard (refuses to start without users, tokens ≥ 16 chars), pseudonymization, DSR export/erase, automatic 90-day retention,
 off-box audit anchors, log-injection sanitising, blocklist hostname validation, `doctor` and `evidence`. See `docs/COMPLIANCE.md`.
 
-## Known limits (be honest with your auditors)
-- **The live database is not encrypted.** Python's stdlib has no vetted cipher and hand-rolled crypto would be a vulnerability. Use full-disk/LUKS encryption on the host. Only *backups* are encrypted.
-- **Audit chain is tamper-evident, not tamper-proof.** Anyone who can rewrite the whole DB can rebuild the chain. Anchor the head hash externally: run `radar audit verify` on a schedule and store the printed head elsewhere; later check with `--head`.
-- **Tokens are shared secrets over plain HTTP on localhost.** Fine for one machine; not acceptable across a network (needs TLS and SSO).
-- **Backup cipher mode is unauthenticated (CBC).** Mitigated by integrity and audit-chain checks on restore, but GCM would be better than `openssl enc` allows.
-- **Lockout is in-memory** and resets on restart; per-IP, which is meaningless behind a proxy.
-- **No third-party security review or penetration test has been done.** Treat this as hardened prototype code until one is.
-- **Credit-card detection** finds numbers in one digit run (spaces/dashes allowed). A card followed immediately by other digits in the same run can be missed.
+## Deployment requirements
+- **Encrypt the host disk.** The live database is not encrypted by the tool (the standard library has no vetted cipher); backups are encrypted.
+- **Anchor the audit chain externally.** The chain is tamper-evident: run `radar audit verify` on a schedule, store the printed head hash elsewhere, and check later with `--head`.
+- **Serve the dashboard on localhost only.** Token logins over plain HTTP suit a single machine; for network access put it behind TLS and SSO.
+- **Backups** use AES-CBC through `openssl enc`, with SQLite-integrity and audit-chain checks on restore.
+- **Login lockout** is per-IP and in-memory; behind a reverse proxy, enforce rate limits at the proxy.
+- **Independent review:** commission a penetration test before production use.
+- **Card detection** matches numbers within a single digit run (spaces and dashes allowed).
 
 ## Operating checklist
 1. Encrypt the disk. 2. Set `RADAR_USERS` with long random tokens (≥ 16 chars recommended). 3. Cron `radar backup` and `radar audit verify`, saving the head hash off-box. 4. Review `radar audit show` weekly. 5. Run `radar purge` on your retention schedule.

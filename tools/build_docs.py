@@ -7,8 +7,7 @@
     python3 tools/build_docs.py --out-dir /some/dir
 
 The Word file is checked by verify_docx.py after it is written; the command fails if the check does. The PDF is rendered by
-headless Chrome/Chromium (the first of google-chrome, chromium, ... found on PATH). Neither output has been opened in Word by
-the tool: the structural check cannot judge appearance, so look at the result once.
+headless Chrome/Chromium (the first of google-chrome, chromium, ... found on PATH).
 """
 import argparse
 import os

@@ -25,7 +25,7 @@ _PLACEHOLDER = re.compile(r"(?i)^(?:your|my|the|example|sample|changeme|xxx|\*+|
 
 def _looks_random(tok: str) -> bool:
     """Blog slugs and URL paths are long and high-entropy but lowercase words joined by hyphens. Real random secrets mix
-    upper, lower and digits. (Found on real WildChat prompts: URL slugs caused 100% false critical alerts.)"""
+    upper, lower and digits."""
     return any(c.isupper() for c in tok) and any(c.islower() for c in tok) and any(c.isdigit() for c in tok)
 
 

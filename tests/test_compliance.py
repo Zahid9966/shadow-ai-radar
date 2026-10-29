@@ -177,7 +177,7 @@ class DoctorAndEvidence(unittest.TestCase):
         res = {c: s for s, c, _ in compliance.doctor(db, d, env={})}
         self.assertEqual(res["data dir permissions"], "PASS")
         self.assertEqual(res["audit chain integrity"], "PASS")
-        self.assertEqual(res["dashboard authentication"], "WARN")  # honest: nothing configured
+        self.assertEqual(res["dashboard authentication"], "WARN")  # nothing configured
         self.assertEqual(res["independent security review"], "WARN")  # never claims what it can't verify
 
     def test_evidence_bundle(self):

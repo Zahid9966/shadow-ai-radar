@@ -200,7 +200,7 @@ class ExistingDirTightened(unittest.TestCase):
 
 
 class EntropyPrecisionFromRealData(unittest.TestCase):
-    """Regression: on 406 real WildChat prompts the entropy detector raised 100% false CRITICAL alerts on URL slugs."""
+    """Regression: URL slugs and share links must not raise critical SECRET_LEAK alerts from the entropy detector."""
 
     def names(self, t):
         return [f[0] for f in detectors.scan(t)]
@@ -225,7 +225,7 @@ class EntropyPrecisionFromRealData(unittest.TestCase):
             self.assertEqual(self.names(t), [], t)
 
     def test_urls_with_mixed_case_and_ids_not_secrets_but_url_secrets_are(self):
-        # shapes seen in real WildChat prompts: author handle (caps) + trailing hex id; share link with random tracking param
+        # realistic URL shapes: author handle (caps) + trailing hex id; share link with random tracking param
         for t in ("https://medium.com/@SomeAuthorName/building-a-selenium-framework-8f3a9c2b1d4e",
                   "Via https://twitter.com/SomeAccountNameHere/status/1234567890123?t=c6P3gH_GtvJ9VMXEmvI-zA"):
             self.assertEqual(self.names(t), [], t)

@@ -1,5 +1,5 @@
 """`radar doctor`: self-assessment of security/privacy posture. `radar evidence`: auditor-ready snapshot.
-Honest by design: a check that cannot be verified from inside the tool reports WARN, never a silent PASS."""
+Conservative by design: a check that cannot be verified from inside the tool reports WARN, never a silent PASS."""
 import glob
 import hashlib
 import json

@@ -135,7 +135,7 @@ class Docx(unittest.TestCase):
         md2docx.build(src, out, "Shadow-AI Radar: Project Summary")
         problems, info = verify_docx.verify(out, src)
         self.assertEqual(problems, [])
-        self.assertEqual(info["tables"], 5)
+        self.assertEqual(info["tables"], 3)
 
 
 class Driver(unittest.TestCase):

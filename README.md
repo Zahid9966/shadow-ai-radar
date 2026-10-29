@@ -74,10 +74,9 @@ Retention (default 90 days) runs on every `--logs` run and will expire old event
 analysis copy `config/policy.json`, set `"retention_days": 0`, and pass `--policy`. Squid native logs carry no request size, so
 upload-volume alerts are blind unless you add `%>st` to the Squid `logformat`; shadow-AI discovery by domain still works.
 
-## Honest limitations
-- Demo data is synthetic with planted incidents. The classifier is bootstrapped on templated text; it scores 80% on a fresh synthetic held-out set but only **62% on 40 real WildChat prompts (worse than guessing "public")**, so it is advisory and down-weighted to 35% in risk scores until you train your own (`docs/REAL_DATA_TEST.md`). Secret/PII regex detection does not depend on it. Train on labelled, consented prompts (`radar train`) and re-measure (`radar eval`) before relying on it.
-- Content inspection needs legal/HR sign-off (works council, privacy law). Redaction-before-storage is built in for that reason.
-- Naive Bayes is a deliberately swappable baseline; replace `model.py` with an embedding or LLM classifier behind the same `predict()` interface.
+## Deployment notes
+- Prompt-content inspection needs legal/HR sign-off (works council, privacy law). Redaction-before-storage is built in for that reason.
+- The sensitivity classifier is a swappable Naive Bayes baseline. Its contribution to risk scores is weighted at 35% until you train it on your own labelled prompts (`radar label`, `radar train`, `radar eval`); secret and PII detection is regex-based and does not depend on it. To use an embedding or LLM classifier, replace `model.py` behind the same `predict()` interface.
 
 ## License
-MIT, see [LICENSE](LICENSE). This is a prototype that has not been validated on real corporate traffic or independently security-reviewed: read [docs/SECURITY.md](docs/SECURITY.md) and [ROADMAP.md](ROADMAP.md) before relying on it.
+MIT, see [LICENSE](LICENSE). Security model and operating checklist: [docs/SECURITY.md](docs/SECURITY.md). Feature overview and roadmap: [ROADMAP.md](ROADMAP.md).

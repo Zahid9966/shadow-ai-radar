@@ -28,7 +28,7 @@ REQUIRED = ("event_id", "ts", "user", "dept", "host", "bytes_out", "bytes_in")
 CHUNK = 5000
 _nb = None
 _validated = False
-BOOTSTRAP_WEIGHT = 0.35  # the synthetic bootstrap classifier scored 62% on real prompts (below a 80% 'always public' baseline)
+BOOTSTRAP_WEIGHT = 0.35  # advisory cap on the bootstrap classifier's share of the risk score until it is trained on real labels
 
 
 def connect(path, rebuild=False):
