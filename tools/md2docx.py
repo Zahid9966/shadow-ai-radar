@@ -1,6 +1,6 @@
 """Minimal Markdown -> .docx writer using only the standard library (no python-docx, docx-js or LibreOffice needed).
 Handles the Markdown this project uses: headings, tables, fenced code, lists, bold/italic/code spans, rules.
-Links are rendered as plain text. Always run verify_docx.py on the result: nothing here has been opened in Word by the author."""
+Links are rendered as plain text. Run verify_docx.py on the result to check it against the source."""
 import re, sys, zipfile, datetime
 from xml.sax.saxutils import escape
 
